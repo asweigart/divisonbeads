@@ -3,7 +3,7 @@ By Al Sweigart al@inventwithpython.com
 
 A small Python CLI app of the "divison beads" math education tool."""
 
-__version__ = '0.1.2'
+__version__ = '0.1.3'
 
 import sys, re
 
@@ -173,6 +173,7 @@ def interactiveMode():
             os.system('clear')
 
         print('\n%s / %s = %s r %s\n' % (dividend, divisor, dividend // divisor, dividend % divisor))
+        print('\n%s x %s + %s = %s\n' % (divisor, dividend // divisor, dividend % divisor, dividend))
         print(getDivisionBeadsStr(dividend, divisor))
 
         print('Press WASD to change size, Q to quit.')
