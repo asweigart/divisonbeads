@@ -1,4 +1,4 @@
 import divisionbeads
 
 if __name__ == '__main__':
-    divisionbeads.askUserForDivisionProblems()
+    divisionbeads.interactiveMode()

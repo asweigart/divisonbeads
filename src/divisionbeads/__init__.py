@@ -3,7 +3,7 @@ By Al Sweigart al@inventwithpython.com
 
 A small Python CLI app of the "divison beads" math education tool."""
 
-__version__ = '0.1.1'
+__version__ = '0.1.2'
 
 import sys, re
 
@@ -156,3 +156,36 @@ def askUserForDivisionProblems():
         dividend, divisor = int(dividend), int(divisor)
         print('\n%s / %s = %s r %s\n' % (dividend, divisor, dividend // divisor, dividend % divisor))
         print(getDivisionBeadsStr(dividend, divisor))
+
+def interactiveMode():
+    try:
+        import keyboard, os
+    except:
+        sys.exit('Division beads interactive mode requires the keyboard module. Run pip install keyboard.')
+
+    dividend = 1
+    divisor = 1
+
+    while True:
+        if sys.platform == 'win32':
+            os.system('cls')
+        else:
+            os.system('clear')
+
+        print('\n%s / %s = %s r %s\n' % (dividend, divisor, dividend // divisor, dividend % divisor))
+        print(getDivisionBeadsStr(dividend, divisor))
+
+        print('Press WASD to change size, Q to quit.')
+        key = keyboard.read_key().upper()  # read key down event
+        if key == 'A' and divisor > 1:
+            divisor -= 1
+        elif key == 'D':
+            divisor += 1
+        elif key == 'W' and dividend > 1:
+            dividend -= 1
+        elif key =='S':
+            dividend += 1
+        elif key == 'Q':
+            return
+
+        keyboard.read_key()  # read key up event
