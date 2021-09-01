@@ -52,3 +52,8 @@ By Al Sweigart al@inventwithpython.com
 
     Enter a division problem (example: 23 / 7) or QUIT.
     > quit
+
+Support
+-------
+
+If you find this project helpful and would like to support its development, [consider donating to its creator on Patreon](https://www.patreon.com/AlSweigart).
